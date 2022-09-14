@@ -1,6 +1,8 @@
 <app-formulario-seccion (agregarSeccion)="agregarSeccion($event)"></app-formulario-seccion>
 <hr>
-<app-formulario-alumno (agregarAlumno)="agregarAlumno($event)"></app-formulario-alumno>
+<app-formulario-alumno
+  [secciones]="listaSeccion"
+  (agregarAlumno)="agregarAlumno($event)"></app-formulario-alumno>
 <hr>
 <app-lista-historial></app-lista-historial>
 <hr>

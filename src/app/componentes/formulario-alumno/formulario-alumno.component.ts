@@ -1,7 +1,8 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 
 import { Alumno } from './../../modelos/alumno'
 import { Seccion } from './../../modelos/seccion'
+import { AppComponent } from './../../app.component'
 
 @Component({
   selector: 'app-formulario-alumno',
@@ -10,12 +11,12 @@ import { Seccion } from './../../modelos/seccion'
 })
 export class FormularioAlumnoComponent {
   @Output() public agregarAlumno = new EventEmitter<Alumno>();
+  @Input() secciones!: Array<Seccion>;
   public alumno: Alumno = {
     rut: '',
     nombre: '',
     apellido: '',
-    edad: 0,
-    seccion: ''
+    edad: 0
   }
   public cambiarRut(evento: Event): void {
     const elementoRut = evento.target as HTMLInputElement;
@@ -45,6 +46,5 @@ export class FormularioAlumnoComponent {
     this.alumno.nombre = '';
     this.alumno.apellido = '';
     this.alumno.edad = 0;
-    this.alumno.seccion = '';
   }
 }

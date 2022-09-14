@@ -6,7 +6,7 @@
     {{ alumno.rut }}
   </h2>
   <h4>
-    {{ alumno.nombre }} {{ alumno.apellido }}
+    {{ alumno.nombre|uppercase }} {{ alumno.apellido|lowercase }}
   </h4>
   <p>
     {{ alumno.edad }}

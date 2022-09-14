@@ -57,10 +57,14 @@
       [value]="alumno.seccion"
       (change)="cambiarSeccion($event)"
     >
+    <option value="Sin Sección">
+      Sin Sección
+    </option>
     <option
-      *ngFor="let item of"
-      [value]="item"
+      *ngFor="let item of secciones"
+      [value]="item.nombre"
     >
+      {{ item.nombre }}
     </option>
     </select>
   </fieldset>
