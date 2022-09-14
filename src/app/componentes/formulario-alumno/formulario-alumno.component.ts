@@ -3,7 +3,6 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { Alumno } from './../../modelos/alumno';
 import { Seccion } from './../../modelos/seccion';
 import { RegistroHistorial } from './../../modelos/registro-historial';
-import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-formulario-alumno',
