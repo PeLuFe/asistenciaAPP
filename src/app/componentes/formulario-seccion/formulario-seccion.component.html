@@ -1,1 +1,24 @@
 <p>formulario-seccion works!</p>
+
+<section>
+  <fieldset>
+    <label>
+      Ingrese el Nombre de la Sección
+    </label>
+    <input
+      type="text"
+      placeholder="Siglas de la sección"
+      name="nombre"
+      [value]="seccion.nombre"
+      (input)="cambiarNombre($event)"
+    >
+  </fieldset>
+  <fieldset>
+    <button
+      type="submit"
+      (click)="guardarSeccion()"
+    >
+      Guardar Seccion
+    </button>
+  </fieldset>
+</section>
