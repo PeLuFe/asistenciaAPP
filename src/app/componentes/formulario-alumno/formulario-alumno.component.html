@@ -1,1 +1,75 @@
 <p>formulario-alumno works!</p>
+
+<section>
+  <fieldset>
+    <label>
+      Ingrese el Rut del Alumno
+    </label>
+    <input
+      type="text"
+      placeholder="12345678-9"
+      name="rut"
+      [value]="alumno.rut"
+      (input)="cambiarRut($event)"
+    >
+  </fieldset>
+  <fieldset>
+    <label>
+      Ingrese el Nombre del Alumno
+    </label>
+    <input
+      type="text"
+      placeholder="Felipe"
+      name="nombre"
+      [value]="alumno.nombre"
+      (input)="cambiarNombre($event)"
+    >
+  </fieldset>
+  <fieldset>
+    <label>
+      Ingrese el Apellido del Alumno
+    </label>
+    <input
+      type="text"
+      placeholder="Cornejo"
+      name="apellido"
+      [value]="alumno.apellido"
+      (input)="cambiarApellido($event)"
+    >
+  </fieldset>
+  <fieldset>
+    <label>
+      Ingrese la Edad del Alumno
+    </label>
+    <input
+      type="number"
+      placeholder="19"
+      [value]="alumno.edad"
+      (input)="cambiarEdad($event)"
+    >
+  </fieldset>
+  <fieldset>
+    <label>
+      Seleccione una Sección para el Alumno
+    </label>
+    <select
+      name="seccion"
+      [value]="alumno.seccion"
+      (change)="cambiarSeccion($event)"
+    >
+    <option
+      *ngFor="let item of"
+      [value]="item"
+    >
+    </option>
+    </select>
+  </fieldset>
+  <fieldset>
+    <button
+      type="submit"
+      (click)="guardarAlumno()"
+    >
+      Guardar Alumno
+    </button>
+  </fieldset>
+</section>
