@@ -1,8 +1,9 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
 
-import { Alumno } from './../../modelos/alumno'
-import { Seccion } from './../../modelos/seccion'
-import { AppComponent } from './../../app.component'
+import { Alumno } from './../../modelos/alumno';
+import { Seccion } from './../../modelos/seccion';
+import { RegistroHistorial } from './../../modelos/registro-historial';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-formulario-alumno',
@@ -12,12 +13,14 @@ import { AppComponent } from './../../app.component'
 export class FormularioAlumnoComponent {
   @Output() public agregarAlumno = new EventEmitter<Alumno>();
   @Input() secciones!: Array<Seccion>;
+  @Input() registros!: Array<RegistroHistorial>;
   public alumno: Alumno = {
     rut: '',
     nombre: '',
     apellido: '',
     edad: 0
   }
+  public registro: RegistroHistorial = {}
   public cambiarRut(evento: Event): void {
     const elementoRut = evento.target as HTMLInputElement;
     this.alumno.rut = elementoRut.value;
@@ -46,5 +49,9 @@ export class FormularioAlumnoComponent {
     this.alumno.nombre = '';
     this.alumno.apellido = '';
     this.alumno.edad = 0;
+  }
+  public guardarRegistro(): void {
+    console.log(this.registro);
+    const copiaRegistro: RegistroHistorial = { ...this.registro };
   }
 }

@@ -2,9 +2,10 @@
 <hr>
 <app-formulario-alumno
   [secciones]="listaSeccion"
-  (agregarAlumno)="agregarAlumno($event)"></app-formulario-alumno>
+  (agregarAlumno)="agregarAlumno($event)"
+  ></app-formulario-alumno>
 <hr>
-<app-lista-historial></app-lista-historial>
+<app-lista-historial [registros]="listaRegistros"></app-lista-historial>
 <hr>
 <app-lista-alumnos [alumnos]="listaAlumno"></app-lista-alumnos>
 <hr>

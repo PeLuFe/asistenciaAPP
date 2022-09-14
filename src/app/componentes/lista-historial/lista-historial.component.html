@@ -1,1 +1,6 @@
-<p>lista-historial works!</p>
+<section>
+  <app-historial
+    *ngFor="let item of registros"
+    [registro]="item"
+  ></app-historial>
+</section>
